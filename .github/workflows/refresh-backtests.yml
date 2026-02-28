@@ -25,6 +25,10 @@ on:
         description: "Bar interval"
         required: false
         default: "1d"
+      workers:
+        description: "Parallel symbol workers"
+        required: false
+        default: "2"
       include_breakout:
         description: "Run breakout strategy as well"
         required: false
@@ -43,6 +47,7 @@ jobs:
       LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '365' }}
       MAX_SYMBOLS: ${{ github.event.inputs.max_symbols || '40' }}
       INTERVAL: ${{ github.event.inputs.interval || '1d' }}
+      WORKERS: ${{ github.event.inputs.workers || '2' }}
       INCLUDE_BREAKOUT: ${{ github.event.inputs.include_breakout || 'false' }}
 
     steps:
@@ -86,4 +91,5 @@ jobs:
             --env "$ENV_NAME" \
             --interval "$INTERVAL" \
             --max-symbols "$MAX_SYMBOLS" \
+            --workers "$WORKERS" \
             $EXTRA_ARGS

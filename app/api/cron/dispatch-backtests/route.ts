@@ -34,6 +34,7 @@ export async function GET(req: NextRequest) {
     const lookbackDays = process.env.CRON_LOOKBACK_DAYS?.trim() || "365";
     const maxSymbols = process.env.CRON_MAX_SYMBOLS?.trim() || "40";
     const interval = process.env.CRON_INTERVAL?.trim() || "1d";
+    const workers = process.env.CRON_WORKERS?.trim() || "2";
     const includeBreakout = process.env.CRON_INCLUDE_BREAKOUT?.trim() || "false";
 
     const url = `https://api.github.com/repos/${githubOwner}/${githubRepo}/actions/workflows/${workflowFile}/dispatches`;
@@ -52,6 +53,7 @@ export async function GET(req: NextRequest) {
           lookback_days: lookbackDays,
           max_symbols: maxSymbols,
           interval,
+          workers,
           include_breakout: includeBreakout,
         },
       }),
@@ -76,6 +78,7 @@ export async function GET(req: NextRequest) {
         lookback_days: lookbackDays,
         max_symbols: maxSymbols,
         interval,
+        workers,
         include_breakout: includeBreakout,
       },
       at: new Date().toISOString(),

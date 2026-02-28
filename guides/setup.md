@@ -97,7 +97,8 @@ From `backend/`:
 uv run python -m app.ingest_cli --env prod --lookback-days 365 --max-symbols 40
 
 # Batch preprocess + backtests across ingested symbols (cross-platform)
-uv run python .\scripts\run_universe_backtests.py --env prod --interval 1d --max-symbols 40
+# --workers uses CPython multiprocess parallelism across symbols
+uv run python .\scripts\run_universe_backtests.py --env prod --interval 1d --max-symbols 40 --workers 4
 ```
 
 These commands:
@@ -185,6 +186,7 @@ long Python job:
   - `CRON_LOOKBACK_DAYS` (default `365`)
   - `CRON_MAX_SYMBOLS` (default `40`)
   - `CRON_INTERVAL` (default `1d`)
+  - `CRON_WORKERS` (default `2`)
   - `CRON_INCLUDE_BREAKOUT` (default `false`)
 
 ### 2) Add GitHub repo secret
