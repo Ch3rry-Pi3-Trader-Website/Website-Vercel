@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "BRK-B",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.18855480054988805,
+  "sharpe": -1.3448897069834298,
+  "max_drawdown": -0.21766268694346746,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

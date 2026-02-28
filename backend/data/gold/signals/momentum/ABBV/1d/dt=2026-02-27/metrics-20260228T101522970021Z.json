@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "ABBV",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": 0.07876719728625159,
+  "sharpe": 0.4175201184900166,
+  "max_drawdown": -0.16223735657975014,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

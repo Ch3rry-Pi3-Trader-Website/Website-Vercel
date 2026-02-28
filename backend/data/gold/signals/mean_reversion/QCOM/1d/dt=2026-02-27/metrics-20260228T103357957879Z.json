@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "QCOM",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": -0.09547230851407384,
+  "sharpe": -0.14470322016628523,
+  "max_drawdown": -0.31325494770729545,
+  "buy_hold_return": -0.07395364122916537,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

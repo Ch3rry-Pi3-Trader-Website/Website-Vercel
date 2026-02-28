@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "CSCO",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": 0.37766447578672535,
+  "sharpe": 1.5614076205603864,
+  "max_drawdown": -0.13574555133673527,
+  "buy_hold_return": 0.2695468672395911,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

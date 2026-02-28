@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "NFLX",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": 0.05547881219078499,
+  "sharpe": 0.33485516413294303,
+  "max_drawdown": -0.25360499476964904,
+  "buy_hold_return": -0.018520048713095982,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "ACN",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.25464780289937217,
+  "sharpe": -0.6362871645988643,
+  "max_drawdown": -0.3064331050866571,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

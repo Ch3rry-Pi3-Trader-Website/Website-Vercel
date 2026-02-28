@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "TSLA",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": 1.083427789889487,
+  "sharpe": 1.6757852411229226,
+  "max_drawdown": -0.24292878590158573,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

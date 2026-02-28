@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "MA",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": 0.26812644317990775,
+  "sharpe": 1.0396359414520162,
+  "max_drawdown": -0.10684768147290591,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

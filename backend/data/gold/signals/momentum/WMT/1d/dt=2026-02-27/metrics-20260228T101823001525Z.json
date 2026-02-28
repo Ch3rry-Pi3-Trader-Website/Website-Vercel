@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "WMT",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": 0.5108623922009317,
+  "sharpe": 1.8737302904658937,
+  "max_drawdown": -0.08141012454677488,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

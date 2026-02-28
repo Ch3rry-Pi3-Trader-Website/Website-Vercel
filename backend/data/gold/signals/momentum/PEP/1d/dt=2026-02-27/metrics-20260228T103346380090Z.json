@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "PEP",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": 0.10643942962174036,
+  "sharpe": 0.6393164513594867,
+  "max_drawdown": -0.16924879713889918,
+  "buy_hold_return": 0.15021212180744525,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

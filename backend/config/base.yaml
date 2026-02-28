@@ -1,0 +1,88 @@
+app:
+  name: pi3-invest-backend
+  timezone: UTC
+
+data:
+  bronze_dir: data/bronze
+  silver_dir: data/silver
+  gold_dir: data/gold
+
+market:
+  default_symbol: SPY
+  default_universe: sp500
+  interval: 1d
+  interval_min: 1440
+  lookback_days: 30
+  universe_cache_file: data/reference/sp500_symbols.json
+  fallback_symbols:
+    - SPY
+    - AAPL
+    - MSFT
+    - NVDA
+    - AMZN
+    - GOOGL
+    - META
+    - BRK-B
+    - TSLA
+    - JPM
+    - V
+    - MA
+    - XOM
+    - JNJ
+    - WMT
+    - PG
+    - COST
+    - UNH
+    - HD
+    - ABBV
+    - CVX
+    - BAC
+    - KO
+    - PEP
+    - MRK
+    - ORCL
+    - CSCO
+    - CRM
+    - NFLX
+    - AMD
+    - INTC
+    - QCOM
+    - TMO
+    - MCD
+    - ABT
+    - LIN
+    - DIS
+    - NKE
+    - ACN
+    - TXN
+    - DHR
+    - PM
+    - VZ
+
+ingestion:
+  provider: yfinance
+  batch_size: 50
+  auto_adjust: true
+  pause_seconds: 0.1
+  max_retries: 2
+
+fees:
+  taker_bps: 4
+  maker_bps: 2
+
+features:
+  pipeline_config: config/features/pipeline.yaml
+
+selection:
+  policy_file: config/selection_policy.yaml
+
+runtime:
+  paper_trading: true
+
+labeling:
+  default_horizon: 1
+
+risk:
+  max_position: 1.0
+  flip_cooldown_bars: 2
+  daily_loss_cap: 0.03

@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "MRK",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.03347842899573017,
+  "sharpe": 0.04356432976363563,
+  "max_drawdown": -0.37106418629504023,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

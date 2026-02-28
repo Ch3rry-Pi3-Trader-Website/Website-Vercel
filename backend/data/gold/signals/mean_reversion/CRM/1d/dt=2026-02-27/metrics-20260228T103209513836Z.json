@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "CRM",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": 0.24462616785636637,
+  "sharpe": 0.9025044135628648,
+  "max_drawdown": -0.1801003700257341,
+  "buy_hold_return": -0.3417436812687603,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

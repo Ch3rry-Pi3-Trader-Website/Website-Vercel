@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "COST",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": -0.07561462339926672,
+  "sharpe": -0.3886046937247305,
+  "max_drawdown": -0.18469591314295142,
+  "buy_hold_return": -0.03078397090803875,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

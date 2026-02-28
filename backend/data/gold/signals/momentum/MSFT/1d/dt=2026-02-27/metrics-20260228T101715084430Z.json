@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "MSFT",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": 0.6796907209342702,
+  "sharpe": 2.257175094895909,
+  "max_drawdown": -0.08462248186894994,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

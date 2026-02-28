@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "NVDA",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.20110498106215324,
+  "sharpe": -0.42692490387607307,
+  "max_drawdown": -0.3444813600797615,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

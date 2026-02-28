@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "CVX",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": -0.29944901259795986,
+  "sharpe": -1.2203880824941582,
+  "max_drawdown": -0.2331021318880756,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

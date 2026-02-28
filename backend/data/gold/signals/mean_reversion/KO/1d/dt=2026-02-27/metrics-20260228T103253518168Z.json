@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "KO",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": 0.018321938890052625,
+  "sharpe": 0.19928204761167587,
+  "max_drawdown": -0.09945888139359638,
+  "buy_hold_return": 0.1791361189902314,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

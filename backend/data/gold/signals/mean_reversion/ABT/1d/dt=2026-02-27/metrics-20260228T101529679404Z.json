@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "ABT",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": 0.5017406142690595,
+  "sharpe": 1.820909115600584,
+  "max_drawdown": -0.17033395044142707,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

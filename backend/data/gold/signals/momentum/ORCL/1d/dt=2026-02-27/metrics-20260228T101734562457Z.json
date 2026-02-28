@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "ORCL",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": 1.9639253969234418,
+  "sharpe": 1.907288449492957,
+  "max_drawdown": -0.2561657911806119,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

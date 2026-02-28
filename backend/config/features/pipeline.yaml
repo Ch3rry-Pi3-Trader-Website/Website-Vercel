@@ -1,0 +1,10 @@
+steps:
+  - name: technicals
+    kind: technicals
+    params:
+      ema_windows: [20, 50]
+      rsi_window: 14
+  - name: volatility
+    kind: volatility
+    params:
+      vol_window: 20

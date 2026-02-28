@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "WMT",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": -0.21757297352702054,
+  "sharpe": -1.0936194345615178,
+  "max_drawdown": -0.3434672617626081,
+  "buy_hold_return": 0.3099556999374731,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

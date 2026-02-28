@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "CVX",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.14407534806969025,
+  "sharpe": -0.605750572666578,
+  "max_drawdown": -0.27150105675444347,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

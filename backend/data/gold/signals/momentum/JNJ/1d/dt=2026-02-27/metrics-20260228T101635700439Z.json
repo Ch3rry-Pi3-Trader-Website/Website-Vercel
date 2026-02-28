@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "JNJ",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": 0.8892474350145065,
+  "sharpe": 3.5718356766341595,
+  "max_drawdown": -0.09737533558969758,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

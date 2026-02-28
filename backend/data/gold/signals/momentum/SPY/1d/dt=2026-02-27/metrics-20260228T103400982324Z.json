@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "SPY",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": 0.29341449173492595,
+  "sharpe": 1.795281938770358,
+  "max_drawdown": -0.0633225589937455,
+  "buy_hold_return": 0.16807321017109556,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

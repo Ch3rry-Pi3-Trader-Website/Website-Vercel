@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "NVDA",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": 0.3471022497467584,
+  "sharpe": 0.8592998005868564,
+  "max_drawdown": -0.3050863575239755,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

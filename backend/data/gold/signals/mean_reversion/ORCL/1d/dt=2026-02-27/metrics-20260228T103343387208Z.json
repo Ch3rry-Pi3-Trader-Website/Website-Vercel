@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "ORCL",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": -0.13308878686024117,
+  "sharpe": -0.035283360393220886,
+  "max_drawdown": -0.3820430527920682,
+  "buy_hold_return": -0.11554033953870224,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

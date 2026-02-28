@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "TXN",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.22883572729946178,
+  "sharpe": -0.5110980996450765,
+  "max_drawdown": -0.3609812458032582,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

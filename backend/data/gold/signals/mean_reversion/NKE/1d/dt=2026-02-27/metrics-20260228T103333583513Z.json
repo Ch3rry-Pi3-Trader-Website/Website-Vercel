@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "NKE",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": -0.05177843081260547,
+  "sharpe": 0.024968183949440993,
+  "max_drawdown": -0.33403890369717204,
+  "buy_hold_return": -0.19878268906900476,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

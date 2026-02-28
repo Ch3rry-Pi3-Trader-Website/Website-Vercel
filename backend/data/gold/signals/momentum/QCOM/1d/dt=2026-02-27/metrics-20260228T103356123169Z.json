@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "QCOM",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": -0.1462212484650749,
+  "sharpe": -0.3434193015740867,
+  "max_drawdown": -0.3444777570508847,
+  "buy_hold_return": -0.07395364122916537,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

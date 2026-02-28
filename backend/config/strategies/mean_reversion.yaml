@@ -1,0 +1,4 @@
+name: mean_reversion
+params:
+  window: 20
+  k: 2.0

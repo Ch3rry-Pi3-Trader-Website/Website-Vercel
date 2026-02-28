@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "BAC",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": 1.9144505419240323,
+  "sharpe": 3.994601611505496,
+  "max_drawdown": -0.12492596803541156,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "V",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.2941113859797361,
+  "sharpe": -1.414751784378193,
+  "max_drawdown": -0.26434862137186854,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

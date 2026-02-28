@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "MSFT",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": -0.2930001309545607,
+  "sharpe": -0.9930193867415456,
+  "max_drawdown": -0.34732942803100597,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

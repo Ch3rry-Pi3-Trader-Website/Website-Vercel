@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "AAPL",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": 0.13172929258551136,
+  "sharpe": 0.5938206917682337,
+  "max_drawdown": -0.22988966801837363,
+  "buy_hold_return": 0.09713608275658059,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

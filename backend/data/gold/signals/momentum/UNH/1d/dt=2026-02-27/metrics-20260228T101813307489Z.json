@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "UNH",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": -0.21610053956897346,
+  "sharpe": -0.19718093194165726,
+  "max_drawdown": -0.4382625635112005,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

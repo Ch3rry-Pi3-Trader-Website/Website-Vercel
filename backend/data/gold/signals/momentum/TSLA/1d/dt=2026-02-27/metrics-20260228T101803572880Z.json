@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "TSLA",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": 0.8634211163734042,
+  "sharpe": 1.4518936340234623,
+  "max_drawdown": -0.21546473941190036,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

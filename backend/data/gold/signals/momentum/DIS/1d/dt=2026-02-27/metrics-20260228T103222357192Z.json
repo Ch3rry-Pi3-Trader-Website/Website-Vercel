@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "DIS",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": 0.14265155717352362,
+  "sharpe": 0.6605981524945901,
+  "max_drawdown": -0.20334306715839068,
+  "buy_hold_return": -0.05788478692916077,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

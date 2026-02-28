@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "MCD",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": 0.15850431984369084,
+  "sharpe": 0.9908354414267725,
+  "max_drawdown": -0.08494921397015931,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "ABBV",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": 0.024953766609795647,
+  "sharpe": 0.2222085237403919,
+  "max_drawdown": -0.20620581685959338,
+  "buy_hold_return": 0.1475167107326829,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

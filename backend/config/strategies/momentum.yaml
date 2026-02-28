@@ -1,0 +1,4 @@
+name: momentum
+params:
+  fast: 20
+  slow: 50

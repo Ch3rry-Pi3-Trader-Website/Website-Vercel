@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "CSCO",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": -0.16544922442513055,
+  "sharpe": -0.4225894333714705,
+  "max_drawdown": -0.26443780622534774,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

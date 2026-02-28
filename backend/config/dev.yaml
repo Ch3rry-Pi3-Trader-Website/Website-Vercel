@@ -1,0 +1,8 @@
+market:
+  lookback_days: 30
+
+ingestion:
+  batch_size: 40
+
+runtime:
+  paper_trading: true

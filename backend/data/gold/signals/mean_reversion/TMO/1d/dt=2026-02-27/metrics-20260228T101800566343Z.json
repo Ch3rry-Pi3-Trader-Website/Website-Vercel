@@ -1,0 +1,18 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "TMO",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 251,
+  "cagr": -0.45437879354905086,
+  "sharpe": -1.4013142386622204,
+  "max_drawdown": -0.3654188798027038,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

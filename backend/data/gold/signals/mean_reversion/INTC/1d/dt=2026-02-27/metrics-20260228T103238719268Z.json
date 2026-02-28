@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "INTC",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": -0.5236205022785738,
+  "sharpe": -1.0945078040275769,
+  "max_drawdown": -0.6786524183429667,
+  "buy_hold_return": 0.9220396751028868,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "AMZN",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": -0.2732442832992925,
+  "sharpe": -0.9434080522624901,
+  "max_drawdown": -0.5322031027446112,
+  "buy_hold_return": -0.010740525684981517,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "COST",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": 0.01243850063889429,
+  "sharpe": 0.15697620377456517,
+  "max_drawdown": -0.11307209011231611,
+  "buy_hold_return": -0.03078397090803875,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

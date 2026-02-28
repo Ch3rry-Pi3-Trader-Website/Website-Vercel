@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "PEP",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": 0.0018340675650858618,
+  "sharpe": 0.1034920278538642,
+  "max_drawdown": -0.16842790846054256,
+  "buy_hold_return": 0.15021212180744525,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

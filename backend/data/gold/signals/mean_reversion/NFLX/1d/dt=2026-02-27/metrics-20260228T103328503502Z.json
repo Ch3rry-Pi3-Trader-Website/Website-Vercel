@@ -1,0 +1,19 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "NFLX",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 502,
+  "cagr": 0.09892431484230113,
+  "sharpe": 0.46758715832587805,
+  "max_drawdown": -0.2877644656462285,
+  "buy_hold_return": -0.018520048713095982,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

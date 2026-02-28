@@ -1,0 +1,18 @@
+{
+  "strategy": "momentum",
+  "symbol": "GOOGL",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 251,
+  "cagr": 1.1126417699330018,
+  "sharpe": 2.6710988337216435,
+  "max_drawdown": -0.12124301880104427,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

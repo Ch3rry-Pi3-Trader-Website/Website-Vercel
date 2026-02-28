@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "AMZN",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": 0.02501337362484346,
+  "sharpe": 0.2256811401486751,
+  "max_drawdown": -0.30798839572638836,
+  "buy_hold_return": -0.010740525684981517,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

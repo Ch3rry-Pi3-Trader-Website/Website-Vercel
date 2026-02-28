@@ -1,0 +1,7 @@
+horizon_days: 30
+metric_weights:
+  sharpe: 0.6
+  cagr: 0.3
+  max_drawdown: 0.1
+decay_half_life_days: 14
+min_bars: 20

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pi3-invest-backend"
+version = "0.1.0"
+description = "Data and strategy backend for PI3 investor app"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "click>=8.1.7",
+  "numpy>=2.1.1",
+  "pandas>=2.2.2",
+  "psycopg[binary]>=3.2.9",
+  "pyarrow>=17.0.0",
+  "pydantic>=2.8.2",
+  "pyyaml>=6.0.2",
+  "yfinance>=0.2.54"
+]
+
+[tool.setuptools.packages.find]
+include = ["app*", "src*"]

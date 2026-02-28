@@ -1,0 +1,19 @@
+{
+  "strategy": "momentum",
+  "symbol": "MCD",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 502,
+  "cagr": 0.14815810260762197,
+  "sharpe": 1.0706252859566243,
+  "max_drawdown": -0.1394294172689161,
+  "buy_hold_return": 0.13195305372026045,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}
