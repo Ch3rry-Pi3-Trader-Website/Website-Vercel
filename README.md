@@ -56,3 +56,13 @@ For production data:
 
 1. Add Neon Postgres (Vercel integration) to the project (this sets `POSTGRES_URL`).
 2. Point backend writes to the same DB using `PI3_DATABASE_URL`.
+
+## Automation note
+
+Automated refresh is wired as:
+
+1. Vercel Cron calls `/api/cron/dispatch-backtests`.
+2. That route dispatches GitHub Actions workflow `refresh-backtests.yml`.
+3. GitHub runs Python ingest + backtests and writes metrics to Neon Postgres.
+
+Setup details and required env vars are in [guides/setup.md](guides/setup.md).

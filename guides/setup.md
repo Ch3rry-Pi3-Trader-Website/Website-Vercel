@@ -96,8 +96,8 @@ From `backend/`:
 # Pull market data (S&P-style universe)
 uv run python -m app.ingest_cli --env prod --lookback-days 365 --max-symbols 40
 
-# Batch preprocess + backtests across ingested symbols
-uv run powershell -ExecutionPolicy Bypass -File .\scripts\run_universe_backtests.ps1 -EnvName prod -Interval 1d -MaxSymbols 40
+# Batch preprocess + backtests across ingested symbols (cross-platform)
+uv run python .\scripts\run_universe_backtests.py --env prod --interval 1d --max-symbols 40
 ```
 
 These commands:
@@ -162,6 +162,60 @@ Deploy:
 ```powershell
 vercel --prod
 ```
+
+## Automated Daily Refresh (Vercel Cron -> GitHub Actions)
+
+This repo is set up so Vercel handles scheduling, and GitHub Actions runs the
+long Python job:
+
+- Vercel cron route: `/api/cron/dispatch-backtests`
+- Schedule file: `vercel.json`
+- Runner workflow: `.github/workflows/refresh-backtests.yml`
+
+### 1) Add Vercel env vars (project settings -> Environment Variables)
+
+- `CRON_SECRET` (random long secret)
+- `GITHUB_TOKEN` (GitHub PAT with `repo` + `workflow` scopes)
+- `GITHUB_OWNER` (for example `roger-campbells-projects`)
+- `GITHUB_REPO` (for example `pi3-trading-site`)
+- Optional overrides:
+  - `GITHUB_WORKFLOW_FILE` (default `refresh-backtests.yml`)
+  - `GITHUB_WORKFLOW_REF` (default `main`)
+  - `CRON_ENV_NAME` (default `prod`)
+  - `CRON_LOOKBACK_DAYS` (default `365`)
+  - `CRON_MAX_SYMBOLS` (default `40`)
+  - `CRON_INTERVAL` (default `1d`)
+  - `CRON_INCLUDE_BREAKOUT` (default `false`)
+
+### 2) Add GitHub repo secret
+
+In GitHub repo -> Settings -> Secrets and variables -> Actions, add:
+
+- `PI3_DATABASE_URL` = your Neon connection string (usually same as `POSTGRES_URL`).
+
+### 3) Redeploy
+
+Push to `main` (or run `vercel --prod`) so Vercel picks up `vercel.json`.
+
+### 4) Manual test trigger
+
+Use your deployed domain:
+
+```powershell
+$headers = @{ Authorization = "Bearer <CRON_SECRET>" }
+Invoke-WebRequest -Uri "https://<your-domain>/api/cron/dispatch-backtests" -Headers $headers
+```
+
+If configured correctly, this dispatches the GitHub Actions workflow.
+
+## Vercel Hobby 300s Limit (What it means)
+
+On the Hobby plan, a single serverless function invocation has a maximum run
+time of up to **300 seconds (5 minutes)**. If it runs longer, Vercel kills it.
+
+That includes cron-triggered route handlers. This is why we only use Vercel for
+the quick dispatch step, and run the heavy Python backtest pipeline in GitHub
+Actions.
 
 ## GitHub Integration
 

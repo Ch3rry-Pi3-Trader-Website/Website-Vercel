@@ -9,7 +9,9 @@ type RankedSymbol = {
   cagr: number;
   sharpe: number;
   maxDrawdown: number;
-  buyHoldReturn: number;
+  buyHoldCagr: number;
+  logSharpe: number;
+  logVolAnn: number;
 };
 
 type Allocation = {
@@ -133,7 +135,9 @@ export default function ResultsClient() {
                 <th>CAGR</th>
                 <th>Sharpe</th>
                 <th>MaxDD</th>
-                <th>Buy/Hold</th>
+                <th>Buy/Hold (Ann.)</th>
+                <th>Log Sharpe</th>
+                <th>Log Vol (Ann.)</th>
               </tr>
             </thead>
             <tbody>
@@ -145,7 +149,9 @@ export default function ResultsClient() {
                   <td>{fmtPct(row.cagr)}</td>
                   <td>{row.sharpe.toFixed(2)}</td>
                   <td>{fmtPct(row.maxDrawdown)}</td>
-                  <td>{fmtPct(row.buyHoldReturn)}</td>
+                  <td>{fmtPct(row.buyHoldCagr)}</td>
+                  <td>{row.logSharpe.toFixed(2)}</td>
+                  <td>{fmtPct(row.logVolAnn)}</td>
                 </tr>
               ))}
             </tbody>

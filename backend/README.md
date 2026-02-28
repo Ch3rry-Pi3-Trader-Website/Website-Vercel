@@ -55,6 +55,12 @@ cd backend
 python -m app.ingest_cli --env prod --lookback-days 365 --max-symbols 40
 
 # 2) Run preprocess + momentum + mean_reversion over all ingested symbols
+python .\scripts\run_universe_backtests.py --env prod --interval 1d --max-symbols 40
+```
+
+Windows PowerShell alternative (kept for convenience):
+
+```powershell
 powershell -ExecutionPolicy Bypass -File .\scripts\run_universe_backtests.ps1 -EnvName prod -Interval 1d -MaxSymbols 40
 ```
 

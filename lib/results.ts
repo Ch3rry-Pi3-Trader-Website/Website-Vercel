@@ -12,6 +12,10 @@ type MetricRow = {
   sharpe: number;
   max_drawdown: number;
   buy_hold_return?: number;
+  buy_hold_cagr?: number;
+  log_sharpe?: number;
+  log_sortino?: number;
+  log_vol_ann?: number;
   _timestamp?: number;
   _score?: number;
 };
@@ -26,6 +30,10 @@ type DbMetricRow = {
   sharpe: number;
   max_drawdown: number;
   buy_hold_return: number;
+  buy_hold_cagr: number;
+  log_sharpe: number;
+  log_sortino: number;
+  log_vol_ann: number;
   run_at: string;
 };
 
@@ -36,7 +44,9 @@ export type RankedSymbol = {
   cagr: number;
   sharpe: number;
   maxDrawdown: number;
-  buyHoldReturn: number;
+  buyHoldCagr: number;
+  logSharpe: number;
+  logVolAnn: number;
 };
 
 export type ResultsPayload = {
@@ -117,6 +127,37 @@ function parseParams(input: unknown): Record<string, number> {
   return out;
 }
 
+function intervalToMinutes(interval: string): number {
+  const val = String(interval || "").trim().toLowerCase();
+  const mapping: Record<string, number> = {
+    "1m": 1,
+    "5m": 5,
+    "15m": 15,
+    "30m": 30,
+    "60m": 60,
+    "1h": 60,
+    "1d": 1440,
+    "1wk": 10080,
+  };
+  if (mapping[val]) return mapping[val];
+  if (val.endsWith("m") && !Number.isNaN(Number(val.slice(0, -1)))) return Number(val.slice(0, -1));
+  if (val.endsWith("h") && !Number.isNaN(Number(val.slice(0, -1)))) return Number(val.slice(0, -1)) * 60;
+  if (val.endsWith("d") && !Number.isNaN(Number(val.slice(0, -1)))) return Number(val.slice(0, -1)) * 1440;
+  return 1440;
+}
+
+function annualizeFromTotalReturn(totalReturn: number, bars: number, interval: string): number {
+  if (!Number.isFinite(totalReturn) || !Number.isFinite(bars) || bars <= 0) return 0;
+  const intervalMin = intervalToMinutes(interval);
+  const barsPerYear = (365 * 24 * 60) / intervalMin;
+  const years = bars / barsPerYear;
+  if (years <= 0) return 0;
+  const start = 1.0;
+  const end = 1.0 + totalReturn;
+  if (end <= 0) return 0;
+  return Math.pow(end / start, 1 / years) - 1.0;
+}
+
 async function loadRowsFromPostgres(): Promise<MetricRow[]> {
   const dbUrl = process.env.POSTGRES_URL || process.env.DATABASE_URL || "";
   if (!dbUrl) {
@@ -127,7 +168,20 @@ async function loadRowsFromPostgres(): Promise<MetricRow[]> {
     const db = neon(dbUrl);
     const rows = (await db`
       SELECT DISTINCT ON (symbol, strategy)
-        strategy, symbol, interval, params, bars, cagr, sharpe, max_drawdown, buy_hold_return, run_at
+        strategy,
+        symbol,
+        interval,
+        params,
+        bars,
+        cagr,
+        sharpe,
+        max_drawdown,
+        COALESCE((to_jsonb(backtest_metrics)->>'buy_hold_return')::double precision, 0) AS buy_hold_return,
+        COALESCE((to_jsonb(backtest_metrics)->>'buy_hold_cagr')::double precision, 0) AS buy_hold_cagr,
+        COALESCE((to_jsonb(backtest_metrics)->>'log_sharpe')::double precision, 0) AS log_sharpe,
+        COALESCE((to_jsonb(backtest_metrics)->>'log_sortino')::double precision, 0) AS log_sortino,
+        COALESCE((to_jsonb(backtest_metrics)->>'log_vol_ann')::double precision, 0) AS log_vol_ann,
+        run_at
       FROM backtest_metrics
       ORDER BY symbol, strategy, run_at DESC, id DESC
     `) as DbMetricRow[];
@@ -142,6 +196,10 @@ async function loadRowsFromPostgres(): Promise<MetricRow[]> {
       sharpe: Number(row.sharpe),
       max_drawdown: Number(row.max_drawdown),
       buy_hold_return: Number(row.buy_hold_return),
+      buy_hold_cagr: Number(row.buy_hold_cagr),
+      log_sharpe: Number(row.log_sharpe),
+      log_sortino: Number(row.log_sortino),
+      log_vol_ann: Number(row.log_vol_ann),
       _timestamp: new Date(row.run_at).getTime(),
     }));
   } catch {
@@ -180,7 +238,9 @@ function buildFallbackPayload(budget: number, holdingsRaw: string): ResultsPaylo
       cagr: 0.13,
       sharpe: 1.18,
       maxDrawdown: -0.09,
-      buyHoldReturn: 0.08,
+      buyHoldCagr: 0.08,
+      logSharpe: 1.1,
+      logVolAnn: 0.19,
     },
     {
       symbol: "MSFT",
@@ -189,7 +249,9 @@ function buildFallbackPayload(budget: number, holdingsRaw: string): ResultsPaylo
       cagr: 0.18,
       sharpe: 0.94,
       maxDrawdown: -0.14,
-      buyHoldReturn: 0.16,
+      buyHoldCagr: 0.16,
+      logSharpe: 0.92,
+      logVolAnn: 0.24,
     },
     {
       symbol: "AAPL",
@@ -198,7 +260,9 @@ function buildFallbackPayload(budget: number, holdingsRaw: string): ResultsPaylo
       cagr: 0.15,
       sharpe: 0.87,
       maxDrawdown: -0.16,
-      buyHoldReturn: 0.12,
+      buyHoldCagr: 0.12,
+      logSharpe: 0.81,
+      logVolAnn: 0.27,
     },
   ];
   const total = fallbackRanking.reduce((acc, row) => acc + row.score, 0);
@@ -254,7 +318,11 @@ function rowsToPayload(
       cagr: row.cagr,
       sharpe: row.sharpe,
       maxDrawdown: row.max_drawdown,
-      buyHoldReturn: row.buy_hold_return ?? 0,
+      buyHoldCagr:
+        row.buy_hold_cagr ??
+        annualizeFromTotalReturn(row.buy_hold_return ?? 0, row.bars, row.interval),
+      logSharpe: row.log_sharpe ?? 0,
+      logVolAnn: row.log_vol_ann ?? 0,
     }));
 
   const positives = ranking.filter((r) => r.score > 0);
