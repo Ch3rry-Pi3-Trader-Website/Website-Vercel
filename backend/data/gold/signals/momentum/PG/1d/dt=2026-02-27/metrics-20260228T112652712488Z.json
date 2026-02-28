@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "PG",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": -0.0579296901314148,
+  "sharpe": -0.49588000780689845,
+  "max_drawdown": -0.1993416204257059,
+  "buy_hold_return": -0.011801616470281218,
+  "buy_hold_cagr": -0.004306645949228249,
+  "log_sharpe": -0.5504548803176073,
+  "log_sortino": -0.42772280342079044,
+  "log_vol_ann": 0.10841100769308641,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "UNH",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.1953360574836207,
+  "sharpe": -0.43232061622094325,
+  "max_drawdown": -0.49033417859461026,
+  "buy_hold_return": -0.3673314406128896,
+  "buy_hold_cagr": -0.19901457946272694,
+  "log_sharpe": -0.5956412794572692,
+  "log_sortino": -0.3572266223279901,
+  "log_vol_ann": 0.36486818313866465,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

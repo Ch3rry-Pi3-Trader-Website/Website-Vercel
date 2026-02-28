@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "NVDA",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": 0.055754392386918816,
+  "sharpe": 0.3414988269088463,
+  "max_drawdown": -0.2232106291140905,
+  "buy_hold_return": 0.4188157800608552,
+  "buy_hold_cagr": 0.13561747116070366,
+  "log_sharpe": 0.22323686821765582,
+  "log_sortino": 0.1572960544580695,
+  "log_vol_ann": 0.2430403888869492,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "NVDA",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.009087410009085972,
+  "sharpe": 0.11533247253043545,
+  "max_drawdown": -0.3497413271401393,
+  "buy_hold_return": 0.4188157800608552,
+  "buy_hold_cagr": 0.18479374819000438,
+  "log_sharpe": -0.031153308001730995,
+  "log_sortino": -0.021901768940116677,
+  "log_vol_ann": 0.2930331631398076,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

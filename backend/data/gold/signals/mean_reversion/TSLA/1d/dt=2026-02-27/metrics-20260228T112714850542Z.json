@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "TSLA",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 1004,
+  "cagr": -0.0725564046120083,
+  "sharpe": -0.05129831212745396,
+  "max_drawdown": -0.5540316712254307,
+  "buy_hold_return": 0.373848026049832,
+  "buy_hold_cagr": 0.12239839036539957,
+  "log_sharpe": -0.2215757995867064,
+  "log_sortino": -0.15217187017477452,
+  "log_vol_ann": 0.3399437126622987,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

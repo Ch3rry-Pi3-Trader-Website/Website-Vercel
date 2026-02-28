@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "JNJ",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 753,
+  "cagr": 0.03938024300010001,
+  "sharpe": 0.3591241601775192,
+  "max_drawdown": -0.20317859239861136,
+  "buy_hold_return": 0.5473986415943053,
+  "buy_hold_cagr": 0.23567839766498944,
+  "log_sharpe": 0.29413992217460727,
+  "log_sortino": 0.22805117502684996,
+  "log_vol_ann": 0.1313137470238763,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "PEP",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.1179004628520337,
+  "sharpe": -0.741461733953412,
+  "max_drawdown": -0.3297931143541115,
+  "buy_hold_return": 0.15021212180744525,
+  "buy_hold_cagr": 0.07018966979672525,
+  "log_sharpe": -0.8188052526830883,
+  "log_sortino": -0.6919441397535644,
+  "log_vol_ann": 0.15321149323667713,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

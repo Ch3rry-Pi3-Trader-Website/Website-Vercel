@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "ACN",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 753,
+  "cagr": -0.2703266523753244,
+  "sharpe": -1.2948340702770904,
+  "max_drawdown": -0.4984632989840375,
+  "buy_hold_return": -0.39511031948965714,
+  "buy_hold_cagr": -0.21625933236177386,
+  "log_sharpe": -1.3916276712936893,
+  "log_sortino": -0.9386643548914116,
+  "log_vol_ann": 0.22646740970459953,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

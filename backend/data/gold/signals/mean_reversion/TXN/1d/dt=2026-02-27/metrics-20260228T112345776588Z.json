@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "TXN",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.017846537855368716,
+  "sharpe": 0.07850737404207019,
+  "max_drawdown": -0.44213948232580313,
+  "buy_hold_return": 0.11642401306859895,
+  "buy_hold_cagr": 0.05483401465067028,
+  "log_sharpe": -0.0632379883506223,
+  "log_sortino": -0.0399528579180978,
+  "log_vol_ann": 0.2847609199891538,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

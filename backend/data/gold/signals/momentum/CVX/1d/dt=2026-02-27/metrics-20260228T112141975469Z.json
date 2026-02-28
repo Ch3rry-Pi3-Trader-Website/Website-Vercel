@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "CVX",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 753,
+  "cagr": 0.06264872896745399,
+  "sharpe": 0.44380315061175263,
+  "max_drawdown": -0.18726378269560984,
+  "buy_hold_return": 0.23039065685423776,
+  "buy_hold_cagr": 0.10572302503510755,
+  "log_sharpe": 0.36142037752796274,
+  "log_sortino": 0.3009396039004234,
+  "log_vol_ann": 0.16812718928688844,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

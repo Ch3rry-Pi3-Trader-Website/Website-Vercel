@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "TMO",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 1004,
+  "cagr": 0.06938880871207798,
+  "sharpe": 0.44482449262150764,
+  "max_drawdown": -0.2627219464073166,
+  "buy_hold_return": -0.011356608388130462,
+  "buy_hold_cagr": -0.004143661453243741,
+  "log_sharpe": 0.3479706122083168,
+  "log_sortino": 0.2358302403738136,
+  "log_vol_ann": 0.1927958169690186,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

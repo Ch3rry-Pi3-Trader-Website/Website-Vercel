@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "TXN",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 753,
+  "cagr": -0.22413568995990985,
+  "sharpe": -0.7782534712175866,
+  "max_drawdown": -0.4122266256083308,
+  "buy_hold_return": 0.11642401306859895,
+  "buy_hold_cagr": 0.05483401465067028,
+  "log_sharpe": -0.9189782999847171,
+  "log_sortino": -0.632847740312909,
+  "log_vol_ann": 0.2761519312135836,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

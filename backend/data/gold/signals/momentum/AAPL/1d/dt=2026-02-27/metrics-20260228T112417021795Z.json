@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "AAPL",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": 0.0021610112694869787,
+  "sharpe": 0.10479735261240558,
+  "max_drawdown": -0.26600867579348175,
+  "buy_hold_return": 0.09713608275658059,
+  "buy_hold_cagr": 0.03427621106815093,
+  "log_sharpe": 0.011498487059200712,
+  "log_sortino": 0.007459553032339133,
+  "log_vol_ann": 0.18773597187433858,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

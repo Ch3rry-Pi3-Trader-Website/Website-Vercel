@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "BAC",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 753,
+  "cagr": 0.0670998031909058,
+  "sharpe": 0.448206142034857,
+  "max_drawdown": -0.2099132802856536,
+  "buy_hold_return": 0.10594584160226495,
+  "buy_hold_cagr": 0.05002349254690497,
+  "log_sharpe": 0.3517404308566623,
+  "log_sortino": 0.2306303073650354,
+  "log_vol_ann": 0.18463758644007375,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "BAC",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": 0.14067997089430873,
+  "sharpe": 0.8041507259415133,
+  "max_drawdown": -0.22288008232638912,
+  "buy_hold_return": 0.10594584160226495,
+  "buy_hold_cagr": 0.05002349254690497,
+  "log_sharpe": 0.7205056504296471,
+  "log_sortino": 0.6361231511575944,
+  "log_vol_ann": 0.18268357813671054,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

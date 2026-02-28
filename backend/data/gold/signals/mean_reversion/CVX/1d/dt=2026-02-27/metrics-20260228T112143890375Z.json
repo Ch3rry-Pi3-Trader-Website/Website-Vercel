@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "CVX",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": 0.0923482413882386,
+  "sharpe": 0.6023972435074555,
+  "max_drawdown": -0.19593537312883558,
+  "buy_hold_return": 0.23039065685423776,
+  "buy_hold_cagr": 0.10572302503510755,
+  "log_sharpe": 0.5220208734656966,
+  "log_sortino": 0.49236230864962605,
+  "log_vol_ann": 0.16920727377800274,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

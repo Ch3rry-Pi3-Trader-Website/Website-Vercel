@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "WMT",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": 0.02839952244108024,
+  "sharpe": 0.26450726113480666,
+  "max_drawdown": -0.21523431991454078,
+  "buy_hold_return": 0.3099556999374731,
+  "buy_hold_cagr": 0.10313369356327362,
+  "log_sharpe": 0.19497654563108896,
+  "log_sortino": 0.16910849682509915,
+  "log_vol_ann": 0.1436261574337515,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

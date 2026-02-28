@@ -36,6 +36,10 @@ def _ensure_schema(conn: psycopg.Connection) -> None:
               sharpe DOUBLE PRECISION NOT NULL,
               max_drawdown DOUBLE PRECISION NOT NULL,
               buy_hold_return DOUBLE PRECISION NOT NULL DEFAULT 0,
+              buy_hold_cagr DOUBLE PRECISION NOT NULL DEFAULT 0,
+              log_sharpe DOUBLE PRECISION NOT NULL DEFAULT 0,
+              log_sortino DOUBLE PRECISION NOT NULL DEFAULT 0,
+              log_vol_ann DOUBLE PRECISION NOT NULL DEFAULT 0,
               risk JSONB NOT NULL DEFAULT '{}'::jsonb,
               source TEXT NOT NULL DEFAULT 'python-backend',
               created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -47,6 +51,30 @@ def _ensure_schema(conn: psycopg.Connection) -> None:
             """
             ALTER TABLE backtest_metrics
             ADD COLUMN IF NOT EXISTS buy_hold_return DOUBLE PRECISION NOT NULL DEFAULT 0
+            """
+        )
+        cur.execute(
+            """
+            ALTER TABLE backtest_metrics
+            ADD COLUMN IF NOT EXISTS buy_hold_cagr DOUBLE PRECISION NOT NULL DEFAULT 0
+            """
+        )
+        cur.execute(
+            """
+            ALTER TABLE backtest_metrics
+            ADD COLUMN IF NOT EXISTS log_sharpe DOUBLE PRECISION NOT NULL DEFAULT 0
+            """
+        )
+        cur.execute(
+            """
+            ALTER TABLE backtest_metrics
+            ADD COLUMN IF NOT EXISTS log_sortino DOUBLE PRECISION NOT NULL DEFAULT 0
+            """
+        )
+        cur.execute(
+            """
+            ALTER TABLE backtest_metrics
+            ADD COLUMN IF NOT EXISTS log_vol_ann DOUBLE PRECISION NOT NULL DEFAULT 0
             """
         )
         cur.execute(
@@ -76,11 +104,13 @@ def persist_backtest_metric(
                     """
                     INSERT INTO backtest_metrics (
                       run_id, run_at, strategy, symbol, interval, params, bars,
-                      cagr, sharpe, max_drawdown, buy_hold_return, risk, source
+                      cagr, sharpe, max_drawdown, buy_hold_return, buy_hold_cagr,
+                      log_sharpe, log_sortino, log_vol_ann, risk, source
                     )
                     VALUES (
                       %(run_id)s, %(run_at)s, %(strategy)s, %(symbol)s, %(interval)s, %(params)s,
-                      %(bars)s, %(cagr)s, %(sharpe)s, %(max_drawdown)s, %(buy_hold_return)s, %(risk)s, %(source)s
+                      %(bars)s, %(cagr)s, %(sharpe)s, %(max_drawdown)s, %(buy_hold_return)s, %(buy_hold_cagr)s,
+                      %(log_sharpe)s, %(log_sortino)s, %(log_vol_ann)s, %(risk)s, %(source)s
                     )
                     ON CONFLICT (run_id, strategy, symbol, interval)
                     DO UPDATE SET
@@ -91,6 +121,10 @@ def persist_backtest_metric(
                       sharpe = EXCLUDED.sharpe,
                       max_drawdown = EXCLUDED.max_drawdown,
                       buy_hold_return = EXCLUDED.buy_hold_return,
+                      buy_hold_cagr = EXCLUDED.buy_hold_cagr,
+                      log_sharpe = EXCLUDED.log_sharpe,
+                      log_sortino = EXCLUDED.log_sortino,
+                      log_vol_ann = EXCLUDED.log_vol_ann,
                       risk = EXCLUDED.risk,
                       source = EXCLUDED.source
                     """,
@@ -106,6 +140,10 @@ def persist_backtest_metric(
                         "sharpe": float(metric.get("sharpe", 0.0)),
                         "max_drawdown": float(metric.get("max_drawdown", 0.0)),
                         "buy_hold_return": float(metric.get("buy_hold_return", 0.0)),
+                        "buy_hold_cagr": float(metric.get("buy_hold_cagr", 0.0)),
+                        "log_sharpe": float(metric.get("log_sharpe", 0.0)),
+                        "log_sortino": float(metric.get("log_sortino", 0.0)),
+                        "log_vol_ann": float(metric.get("log_vol_ann", 0.0)),
                         "risk": Jsonb(metric.get("risk", {}) or {}),
                         "source": "python-backend",
                     },

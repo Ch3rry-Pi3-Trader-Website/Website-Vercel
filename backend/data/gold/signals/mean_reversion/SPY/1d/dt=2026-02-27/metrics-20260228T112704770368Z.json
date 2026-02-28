@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "SPY",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 1004,
+  "cagr": 0.0605539023042867,
+  "sharpe": 0.5760229932627494,
+  "max_drawdown": -0.11721343475830348,
+  "buy_hold_return": 0.16807321017109556,
+  "buy_hold_cagr": 0.05810425132999053,
+  "log_sharpe": 0.5125137309559176,
+  "log_sortino": 0.2907814513454237,
+  "log_vol_ann": 0.11471169928778757,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

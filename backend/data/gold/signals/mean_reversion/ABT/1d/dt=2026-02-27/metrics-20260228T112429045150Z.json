@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "ABT",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 1004,
+  "cagr": -0.022097197883750197,
+  "sharpe": -0.09682740071402582,
+  "max_drawdown": -0.20893962848754744,
+  "buy_hold_return": -0.1411261858899664,
+  "buy_hold_cagr": -0.053805768768191875,
+  "log_sharpe": -0.16471689723258456,
+  "log_sortino": -0.10774090820579342,
+  "log_vol_ann": 0.13565698845050247,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

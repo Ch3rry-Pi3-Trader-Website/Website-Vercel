@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "AMD",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.1860880116708311,
+  "sharpe": -0.2380173098041833,
+  "max_drawdown": -0.670051736322804,
+  "buy_hold_return": 1.0049069245961255,
+  "buy_hold_cagr": 0.40098488968045465,
+  "log_sharpe": -0.4569469955247969,
+  "log_sortino": -0.3128070808278827,
+  "log_vol_ann": 0.4506059636840616,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

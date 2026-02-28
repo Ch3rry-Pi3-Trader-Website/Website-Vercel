@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "INTC",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": -0.20135818106812287,
+  "sharpe": -0.37974697773115923,
+  "max_drawdown": -0.5575404389408233,
+  "buy_hold_return": 0.9220396751028868,
+  "buy_hold_cagr": 0.2681207668211991,
+  "log_sharpe": -0.5613880039861483,
+  "log_sortino": -0.3048935871755931,
+  "log_vol_ann": 0.40051215705252174,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

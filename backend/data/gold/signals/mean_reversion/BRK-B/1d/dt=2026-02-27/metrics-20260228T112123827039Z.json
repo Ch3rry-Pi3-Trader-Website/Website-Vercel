@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "BRK-B",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.058268233501521105,
+  "sharpe": -0.44478558580667027,
+  "max_drawdown": -0.1697473244834018,
+  "buy_hold_return": -0.017281989349524185,
+  "buy_hold_cagr": -0.008414687634004991,
+  "log_sharpe": -0.5017323008935671,
+  "log_sortino": -0.3368061791235029,
+  "log_vol_ann": 0.11965503075559439,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

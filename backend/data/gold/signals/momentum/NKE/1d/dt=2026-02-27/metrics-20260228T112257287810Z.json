@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "NKE",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 753,
+  "cagr": -0.02200068630163321,
+  "sharpe": 0.06414469048844232,
+  "max_drawdown": -0.372619475014236,
+  "buy_hold_return": -0.19878268906900476,
+  "buy_hold_cagr": -0.1018577834690807,
+  "log_sharpe": -0.07796451270224596,
+  "log_sortino": -0.05319477457416911,
+  "log_vol_ann": 0.2853389307060606,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

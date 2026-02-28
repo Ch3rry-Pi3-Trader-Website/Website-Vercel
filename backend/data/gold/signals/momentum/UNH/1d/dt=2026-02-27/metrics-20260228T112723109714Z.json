@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "UNH",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": -0.19357518590590317,
+  "sharpe": -0.546307017708416,
+  "max_drawdown": -0.4569987979840363,
+  "buy_hold_return": -0.3673314406128896,
+  "buy_hold_cagr": -0.1533216429908797,
+  "log_sharpe": -0.6806945573839318,
+  "log_sortino": -0.3505788730739358,
+  "log_vol_ann": 0.31606630074913833,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

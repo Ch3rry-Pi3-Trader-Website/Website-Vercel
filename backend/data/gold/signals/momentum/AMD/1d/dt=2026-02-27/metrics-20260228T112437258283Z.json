@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "AMD",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": 0.02441125118158305,
+  "sharpe": 0.2493436666487305,
+  "max_drawdown": -0.4293790051770915,
+  "buy_hold_return": 1.0049069245961255,
+  "buy_hold_cagr": 0.28773081520839905,
+  "log_sharpe": 0.0641253778073348,
+  "log_sortino": 0.04553794525960483,
+  "log_vol_ann": 0.37610785775151506,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

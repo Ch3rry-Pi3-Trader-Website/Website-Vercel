@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "TSLA",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": -0.12837381728133945,
+  "sharpe": -0.23592960064678795,
+  "max_drawdown": -0.6177775866852117,
+  "buy_hold_return": 0.373848026049832,
+  "buy_hold_cagr": 0.12239839036539957,
+  "log_sharpe": -0.40933648153030006,
+  "log_sortino": -0.330998865464026,
+  "log_vol_ann": 0.33565206799052244,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

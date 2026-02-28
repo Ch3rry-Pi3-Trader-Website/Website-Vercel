@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "ACN",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": 0.22690460489997033,
+  "sharpe": 0.9999323221470747,
+  "max_drawdown": -0.25075749822365134,
+  "buy_hold_return": -0.39511031948965714,
+  "buy_hold_cagr": -0.21625933236177386,
+  "log_sharpe": 0.8917850010267473,
+  "log_sortino": 0.8095186027199684,
+  "log_vol_ann": 0.22930910012291636,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

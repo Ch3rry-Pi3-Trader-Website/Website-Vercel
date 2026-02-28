@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "ORCL",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": -0.20139427116961905,
+  "sharpe": -0.4159172463665442,
+  "max_drawdown": -0.5819066899860282,
+  "buy_hold_return": -0.11554033953870224,
+  "buy_hold_cagr": -0.0436540548751313,
+  "log_sharpe": -0.5668667944044573,
+  "log_sortino": -0.2812091730392045,
+  "log_vol_ann": 0.3967209104623057,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

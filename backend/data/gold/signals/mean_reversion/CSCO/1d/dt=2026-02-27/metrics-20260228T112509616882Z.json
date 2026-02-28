@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "CSCO",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 1004,
+  "cagr": -0.08719990611907658,
+  "sharpe": -0.47527441411581245,
+  "max_drawdown": -0.3703243015323586,
+  "buy_hold_return": 0.2695468672395911,
+  "buy_hold_cagr": 0.09063910462065738,
+  "log_sharpe": -0.5599581116540991,
+  "log_sortino": -0.3973504116613271,
+  "log_vol_ann": 0.16293786211145475,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

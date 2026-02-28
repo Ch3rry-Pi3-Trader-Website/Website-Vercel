@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "XOM",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": -0.0449312841912991,
+  "sharpe": -0.24219814016867144,
+  "max_drawdown": -0.2943279566119116,
+  "buy_hold_return": 0.4168669321846128,
+  "buy_hold_cagr": 0.1350501446454917,
+  "log_sharpe": -0.31404150942184433,
+  "log_sortino": -0.2084409308310541,
+  "log_vol_ann": 0.1463882511843707,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

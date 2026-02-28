@@ -8,7 +8,15 @@ import click
 import pandas as pd
 
 from src.backtesting.engine import run_backtest
-from src.backtesting.metrics import cagr, max_drawdown, sharpe
+from src.backtesting.metrics import (
+    cagr,
+    max_drawdown,
+    realized_vol_log,
+    sharpe,
+    sharpe_log,
+    sortino_log,
+    to_log_returns,
+)
 from src.backtesting.persist import timestamp_utc_str, write_metrics_json, write_timeseries_csv
 from src.core.configs import load_config, load_strategy_params, resolve_path
 from src.core.io import latest_partition, read_parquet_many
@@ -98,7 +106,10 @@ def main(
         daily_loss_cap=daily_loss_cap,
     )
     r, eq = res["returns"], res["equity"]
+    log_r = to_log_returns(r)
     buy_hold_return = float(df["close"].iloc[-1] / df["close"].iloc[0] - 1.0)
+    buy_hold_equity = (df["close"] / float(df["close"].iloc[0])).rename("equity_buy_hold")
+    buy_hold_cagr = float(cagr(buy_hold_equity, interval_min))
 
     m = {
         "strategy": strategy,
@@ -110,6 +121,10 @@ def main(
         "sharpe": float(sharpe(r, interval_min)),
         "max_drawdown": float(max_drawdown(eq)),
         "buy_hold_return": buy_hold_return,
+        "buy_hold_cagr": buy_hold_cagr,
+        "log_sharpe": float(sharpe_log(log_r, interval_min)),
+        "log_sortino": float(sortino_log(log_r, interval_min)),
+        "log_vol_ann": float(realized_vol_log(log_r, interval_min)),
         "risk": {
             "max_position": max_position,
             "flip_cooldown_bars": flip_cooldown,
@@ -119,7 +134,7 @@ def main(
     click.echo(
         f"[BACKTEST] {strategy} | Bars={m['bars']} | CAGR={m['cagr']:.2%} | "
         f"Sharpe={m['sharpe']:.2f} | MaxDD={m['max_drawdown']:.2%} | "
-        f"BuyHold={m['buy_hold_return']:.2%}"
+        f"BuyHold={m['buy_hold_cagr']:.2%} (ann.) | LogSharpe={m['log_sharpe']:.2f}"
     )
 
     dt_str = pd.to_datetime(df["timestamp"].iloc[-1], utc=True).date().isoformat()

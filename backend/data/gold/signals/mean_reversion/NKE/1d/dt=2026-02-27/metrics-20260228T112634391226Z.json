@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "NKE",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 1004,
+  "cagr": -0.12551718419047464,
+  "sharpe": -0.4130750504916756,
+  "max_drawdown": -0.48377954879144736,
+  "buy_hold_return": -0.19878268906900476,
+  "buy_hold_cagr": -0.077409808873944,
+  "log_sharpe": -0.5355046263680772,
+  "log_sortino": -0.358230396412297,
+  "log_vol_ann": 0.25046027320020736,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

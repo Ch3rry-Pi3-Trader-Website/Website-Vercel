@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "ABT",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 753,
+  "cagr": 0.030276582311333566,
+  "sharpe": 0.2681355380785136,
+  "max_drawdown": -0.15673222458684544,
+  "buy_hold_return": -0.1411261858899664,
+  "buy_hold_cagr": -0.071089808222779,
+  "log_sharpe": 0.19006616340799437,
+  "log_sortino": 0.13762032070315078,
+  "log_vol_ann": 0.15693110323158507,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

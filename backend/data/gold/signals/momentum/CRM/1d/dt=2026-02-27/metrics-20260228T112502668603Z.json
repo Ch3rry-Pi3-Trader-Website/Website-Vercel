@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "CRM",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": 0.16057590899888896,
+  "sharpe": 0.8327141914251911,
+  "max_drawdown": -0.22527267585669042,
+  "buy_hold_return": -0.3417436812687603,
+  "buy_hold_cagr": -0.14102944785639693,
+  "log_sharpe": 0.7315612965066994,
+  "log_sortino": 0.5126222244283535,
+  "log_vol_ann": 0.20355964141650426,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

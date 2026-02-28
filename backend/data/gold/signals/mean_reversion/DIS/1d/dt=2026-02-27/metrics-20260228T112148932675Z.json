@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "DIS",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": 0.06866353107303724,
+  "sharpe": 0.4167942577572801,
+  "max_drawdown": -0.3050231535331792,
+  "buy_hold_return": -0.05788478692916077,
+  "buy_hold_cagr": -0.028489501391292693,
+  "log_sharpe": 0.3089550540335779,
+  "log_sortino": 0.22768811945162018,
+  "log_vol_ann": 0.21494657727842525,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

@@ -11,6 +11,10 @@ CREATE TABLE IF NOT EXISTS backtest_metrics (
   sharpe DOUBLE PRECISION NOT NULL,
   max_drawdown DOUBLE PRECISION NOT NULL,
   buy_hold_return DOUBLE PRECISION NOT NULL DEFAULT 0,
+  buy_hold_cagr DOUBLE PRECISION NOT NULL DEFAULT 0,
+  log_sharpe DOUBLE PRECISION NOT NULL DEFAULT 0,
+  log_sortino DOUBLE PRECISION NOT NULL DEFAULT 0,
+  log_vol_ann DOUBLE PRECISION NOT NULL DEFAULT 0,
   risk JSONB NOT NULL DEFAULT '{}'::jsonb,
   source TEXT NOT NULL DEFAULT 'python-backend',
   created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
@@ -19,6 +23,18 @@ CREATE TABLE IF NOT EXISTS backtest_metrics (
 
 ALTER TABLE backtest_metrics
 ADD COLUMN IF NOT EXISTS buy_hold_return DOUBLE PRECISION NOT NULL DEFAULT 0;
+
+ALTER TABLE backtest_metrics
+ADD COLUMN IF NOT EXISTS buy_hold_cagr DOUBLE PRECISION NOT NULL DEFAULT 0;
+
+ALTER TABLE backtest_metrics
+ADD COLUMN IF NOT EXISTS log_sharpe DOUBLE PRECISION NOT NULL DEFAULT 0;
+
+ALTER TABLE backtest_metrics
+ADD COLUMN IF NOT EXISTS log_sortino DOUBLE PRECISION NOT NULL DEFAULT 0;
+
+ALTER TABLE backtest_metrics
+ADD COLUMN IF NOT EXISTS log_vol_ann DOUBLE PRECISION NOT NULL DEFAULT 0;
 
 CREATE INDEX IF NOT EXISTS idx_backtest_metrics_symbol_strategy_runat
 ON backtest_metrics(symbol, strategy, run_at DESC);

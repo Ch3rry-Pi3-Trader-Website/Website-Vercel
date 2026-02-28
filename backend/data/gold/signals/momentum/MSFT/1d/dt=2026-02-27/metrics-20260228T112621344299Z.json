@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "MSFT",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": 0.05794226716149087,
+  "sharpe": 0.43920211872175857,
+  "max_drawdown": -0.16580089075700466,
+  "buy_hold_return": -0.003131899831259166,
+  "buy_hold_cagr": -0.0011397258056842219,
+  "log_sharpe": 0.3627221291617711,
+  "log_sortino": 0.2418138401025272,
+  "log_vol_ann": 0.15528626328120101,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

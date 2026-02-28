@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "MSFT",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 1004,
+  "cagr": -0.07561910876227196,
+  "sharpe": -0.42196122433328315,
+  "max_drawdown": -0.29319499825646034,
+  "buy_hold_return": -0.003131899831259166,
+  "buy_hold_cagr": -0.0011397258056842219,
+  "log_sharpe": -0.4978774603558658,
+  "log_sortino": -0.2928402157697901,
+  "log_vol_ann": 0.15793258097947058,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

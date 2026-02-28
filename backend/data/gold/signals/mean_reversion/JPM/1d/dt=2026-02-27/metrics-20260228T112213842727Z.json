@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "JPM",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.01313426601698997,
+  "sharpe": 0.012034074720598689,
+  "max_drawdown": -0.24776336541347987,
+  "buy_hold_return": 0.15797301091599403,
+  "buy_hold_cagr": 0.07368380036059041,
+  "log_sharpe": -0.07535317901224446,
+  "log_sortino": -0.053780312649429084,
+  "log_vol_ann": 0.17545753796359675,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

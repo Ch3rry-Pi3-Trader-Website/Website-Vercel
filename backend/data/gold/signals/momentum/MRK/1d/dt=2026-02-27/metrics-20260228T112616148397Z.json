@@ -1,0 +1,23 @@
+{
+  "strategy": "momentum",
+  "symbol": "MRK",
+  "interval": "1d",
+  "params": {
+    "fast": 20,
+    "slow": 50
+  },
+  "bars": 1004,
+  "cagr": -0.0003113644163470486,
+  "sharpe": 0.08624552823672475,
+  "max_drawdown": -0.3572768963551989,
+  "buy_hold_return": 0.39268206974937137,
+  "buy_hold_cagr": 0.1279680208885725,
+  "log_sharpe": -0.0017695253027289004,
+  "log_sortino": -0.0011473355226470354,
+  "log_vol_ann": 0.17598668966864478,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}

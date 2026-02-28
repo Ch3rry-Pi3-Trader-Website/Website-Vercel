@@ -1,0 +1,23 @@
+{
+  "strategy": "mean_reversion",
+  "symbol": "INTC",
+  "interval": "1d",
+  "params": {
+    "window": 20,
+    "k": 2.0
+  },
+  "bars": 753,
+  "cagr": -0.46410670484347316,
+  "sharpe": -1.158832482553479,
+  "max_drawdown": -0.8159153788010516,
+  "buy_hold_return": 0.9220396751028868,
+  "buy_hold_cagr": 0.37261103544284246,
+  "log_sharpe": -1.3514943397674968,
+  "log_sortino": -0.8834613590443443,
+  "log_vol_ann": 0.46157811806852256,
+  "risk": {
+    "max_position": 1.0,
+    "flip_cooldown_bars": 2,
+    "daily_loss_cap": 0.03
+  }
+}
