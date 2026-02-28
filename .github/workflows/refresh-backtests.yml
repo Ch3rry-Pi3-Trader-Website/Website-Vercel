@@ -1,0 +1,89 @@
+name: Refresh Backtests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+      - ".github/workflows/refresh-backtests.yml"
+  workflow_dispatch:
+    inputs:
+      env_name:
+        description: "Backend config environment"
+        required: false
+        default: "prod"
+      lookback_days:
+        description: "Trailing lookback window for ingest"
+        required: false
+        default: "365"
+      max_symbols:
+        description: "Max symbols to ingest/process"
+        required: false
+        default: "40"
+      interval:
+        description: "Bar interval"
+        required: false
+        default: "1d"
+      include_breakout:
+        description: "Run breakout strategy as well"
+        required: false
+        default: "false"
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      PI3_DATABASE_URL: ${{ secrets.PI3_DATABASE_URL }}
+      ENV_NAME: ${{ github.event.inputs.env_name || 'prod' }}
+      LOOKBACK_DAYS: ${{ github.event.inputs.lookback_days || '365' }}
+      MAX_SYMBOLS: ${{ github.event.inputs.max_symbols || '40' }}
+      INTERVAL: ${{ github.event.inputs.interval || '1d' }}
+      INCLUDE_BREAKOUT: ${{ github.event.inputs.include_breakout || 'false' }}
+
+    steps:
+      - name: Fail if DB secret is missing
+        if: ${{ env.PI3_DATABASE_URL == '' }}
+        run: |
+          echo "PI3_DATABASE_URL secret is required."
+          exit 1
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Install backend dependencies
+        working-directory: backend
+        run: uv sync
+
+      - name: Ingest market data
+        working-directory: backend
+        run: |
+          uv run python -m app.ingest_cli \
+            --env "$ENV_NAME" \
+            --lookback-days "$LOOKBACK_DAYS" \
+            --max-symbols "$MAX_SYMBOLS"
+
+      - name: Run preprocess + backtests
+        working-directory: backend
+        run: |
+          EXTRA_ARGS=""
+          if [ "$INCLUDE_BREAKOUT" = "true" ]; then
+            EXTRA_ARGS="--include-breakout"
+          fi
+          uv run python scripts/run_universe_backtests.py \
+            --env "$ENV_NAME" \
+            --interval "$INTERVAL" \
+            --max-symbols "$MAX_SYMBOLS" \
+            $EXTRA_ARGS
